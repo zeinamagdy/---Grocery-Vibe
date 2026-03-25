@@ -18,7 +18,7 @@ This project uses **Vitest** and **React Testing Library** to ensure a bug-free 
 
 To run the tests in watch mode:
 ```bash
-npm test
+npx vitest 
 ## 🛠️ Setup
 1. `npm install`
 2. `npm run dev`
