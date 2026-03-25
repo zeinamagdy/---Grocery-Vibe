@@ -20,47 +20,76 @@
 }
 
 .title {
-  color: #2d3436;
+ font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #48dbbb 0%, #667eea 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-align: center;
   margin-bottom: 1.5rem;
-  font-weight: 800;
+  letter-spacing: -1px; /* Tighter letters look more "designed" */
 }
 
-/* Input Area */
+/* Container for the form  */
 .form {
   display: flex;
   gap: 12px;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  width: 100%;
 }
 
+/* The Glassmorphism Input */
 .input {
   flex: 1;
-  padding: 12px 16px;
-  border-radius: 12px;
-  border: 2px solid #eee;
-  transition: border-color 0.3s ease;
+  padding: 14px 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color:#636e72;
+  background: rgba(255, 255, 255, 0.1);
   font-size: 1rem;
-}
-
-.input:focus {
+  backdrop-filter: blur(8px); /* Frosted glass effect */
   outline: none;
-  border-color: #764ba2;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.input::placeholder {
+  color: rgba(110, 107, 107, 0.4)!important;
+}
+
+/* Glow effect on focus - using the Mint color (#48dbbb) */
+.input:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #48dbbb;
+  box-shadow: 0 0 20px rgba(72, 219, 187, 0.2);
+}
+
+/* The Vibrant Add Button */
 .add-button {
-  padding: 12px 20px;
-  background: #764ba2;
-  color: white;
+  padding: 0 28px;
+  border-radius: 14px;
   border: none;
-  border-radius: 12px;
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
   cursor: pointer;
-  font-weight: bold;
-  transition: transform 0.2s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Interactive Button Effects */
 .add-button:hover {
-  transform: scale(1.05);
-  background: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  filter: brightness(1.1);
+}
+
+.add-button:active {
+  transform: translateY(0);
 }
 
 /* List Items */
@@ -90,7 +119,23 @@
   text-decoration: line-through;
   opacity: 0.5;
 }
+/* 1st, 4th, 7th... (Deep Purple Vibe) */
+.item-row:nth-child(3n+1) {
+  background: rgba(118, 75, 162, 0.25); 
+  border-left: 4px solid #764ba2;
+}
 
+/* 2nd, 5th, 8th... (Electric Blue Vibe) */
+.item-row:nth-child(3n+2) {
+  background: rgba(102, 126, 234, 0.25);
+  border-left: 4px solid #667eea;
+}
+
+/* 3rd, 6th, 9th... (The "Pop" Color - Soft Mint) */
+.item-row:nth-child(3n+3) {
+  background: rgba(72, 219, 188, 0.15); /* Minty Green tint */
+  border-left: 4px solid #48dbbb;      /* Bright Mint stripe */
+}
 .delete-btn {
   background: #ffeaa7;
   border: none;
