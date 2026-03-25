@@ -12,7 +12,13 @@ A sleek, glassmorphic grocery list built with **React + Vite**. Designed for spe
 - **React 18** (Functional Components & Hooks)
 - **Vite** (Lightning-fast build tool)
 - **CSS3** (Flexbox & Glassmorphism)
+## 🧪 Testing
 
+This project uses **Vitest** and **React Testing Library** to ensure a bug-free experience. The test suite covers full CRUD functionality (Create, Read, Update, Delete) and UI interactions.
+
+To run the tests in watch mode:
+```bash
+npm test
 ## 🛠️ Setup
 1. `npm install`
 2. `npm run dev`
